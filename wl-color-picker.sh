@@ -60,7 +60,7 @@ position=$(slurp -b 00000000 -p)
 sleep 1
 
 # Store the hex color value using graphicsmagick or imagemagick.
-if command -v /usr/bin/gm &> /dev/null; then
+if command -v /usr/bin/gm > /dev/null 2>&1; then
     color=$(grim -g "$position" -t png - \
         | /usr/bin/gm convert - -format '%[pixel:p{0,0}]' txt:- \
         | tail -n 1 \
