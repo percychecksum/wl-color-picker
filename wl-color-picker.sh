@@ -70,7 +70,7 @@ if command -v /usr/bin/gm > /dev/null 2>&1; then
     )
 else
     color=$(grim -g "$position" -t png - \
-        | convert - -format '%[pixel:p{0,0}]' txt:- \
+        | magick - -format '%[pixel:p{0,0}]' txt:- \
         | tail -n 1 \
         | cut -d ' ' -f 4
     )
