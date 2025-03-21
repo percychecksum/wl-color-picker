@@ -98,5 +98,8 @@ else
 
         # Copy user selection to clipboard
         echo $hex_color | wl-copy -n
+        if [ $NO_NOTIFY -ne 1 ]; then
+            notify-send "Color copied to clipboard." $hex_color
+        fi
     fi
 fi
